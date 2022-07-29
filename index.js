@@ -10,7 +10,7 @@ app.get("/", (request, response) => {
   response.end("DISCORD BOT YO");
 });
 
-const listener = server.listen(process.env.PORT, function() {
+const listener = server.listen(3000, function() {
   console.log(`Your app is listening on port ` + listener.address().port);
 });
 
@@ -20,67 +20,8 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const { TOKEN, CHANNEL_ID, SERVER_CHANNEL_ID } = require("./config.json");
 const YouTubeNotifier = require('youtube-notification');
         const fs = require('node:fs')
-        const { REST } = require('@discordjs/rest')
-        const { Routes, ActivityType } = require('discord-api-types/v10')
-        const { clientId, guildId} = require('./config.json')
-
-// client.on("ready", () => {
-//   console.log("Watching " + CHANNEL_ID.length  + " Channels")
 
 
-
-
-
-
-//         console.log(`Ready! logged in as ${client.user.tag}`)
-
-//         client.user.setPresence({ activities: [{ name: '-help', type: ActivityType.Listening}],  status: 'online'})
-
-// const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'))
-
-// for(const file of eventFiles) {
-//     const event = require(`./events/${file}`)
-//     if (event.once) {
-//         client.once(event.name, (...args) => event.execute(...args))
-//     } else {
-//         client.on(event.name, (...args) => event.execute(...args, client))
-//     }
-// }
-
-// const commands = []
-// const publicCommands = []
-
-// fs.readdirSync("./commands/").forEach(dir => {
-//     let commandFiles = fs.readdirSync(`./commands/${dir}/`).filter(file => file.endsWith(".js"))
-//     for (const file of commandFiles) {
-//         const command = require(`./commands/${dir}/${file}`)
-//         commands.push(command.data.toJSON())
-//     }
-//     for(const file of commandFiles) {
-//         const command = require(`./commands/${dir}/${file}`)
-    
-//         if(command.active === "active") {
-//             publicCommands.push(command.data.toJSON())
-//         }
-//     }
-// })
-
-// //console.log(publicCommands)
-// const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
-// rest.put(Routes.applicationCommands(clientId), { body: publicCommands })
-//     .then(() => console.log('successfully registered public commands.'))
-//     .catch(console.error)
-// rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-//     .then(() => console.log('successfully registered dexter bot server commands.'))
-//     .catch(console.error)
-
-
-
-
-
-
-  
-// })
 
 const notifier = new YouTubeNotifier({
   hubCallback: 'https://milk-bot.conconred.repl.co/yt',
